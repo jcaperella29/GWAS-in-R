@@ -48,14 +48,14 @@ GWAS_DF<-data.frame(GWASDrops$GWAResult$Mur13W)
 GWAS_DF_SORTED<- GWAS_DF[order(GWAS_DF$pValue),]
 
 #outputting a CVS file with the SNP sorted by P-value
-write.csv(GWAS_DF_SORTED,"C:/Users/ccape/OneDrive/Documents/Sorted_GWAS_DATA.csv")
+write.csv(GWAS_DF_SORTED,"path choosen by user")
 
 #checking  for SNPs of Genome Wide Significance in the  data.
 
 GWAS_DF_ONLY_GENOME_WIDE_SIG<- GWAS_DF_SORTED %>% filter(pValue<= 5e-8)
 #outputting a text file containing a list of SNPs that have pvalues less than or equal  or to 5e-8
 
-write.table(GWAS_DF_ONLY_GENOME_WIDE_SIG$snp,"C:/Users/ccape/OneDrive/Documents/Significant_varaints.txt")
+write.table(GWAS_DF_ONLY_GENOME_WIDE_SIG$snp,"path choosen by the user")
 
 
 ## Plot a manhattan plot of GWAS Drops with significance threshold 8.
